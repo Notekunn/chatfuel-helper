@@ -1,7 +1,7 @@
 class Chatfuel {
     constructor() {
-        this.result = new Object();
-        this.result.message = new Array();
+        this.result = new Object({ message: [] });
+        // return this;
     }
 
     sendText(text) {
@@ -9,8 +9,10 @@ class Chatfuel {
         return this;
     }
     render() {
-        if(this.result.message) this.result.message = this.result.message.slice(0, 10)
-        return this.result;
+        if (this.result.message) this.result.message = this.result.message.slice(0, 10);
+        let result = { ...this.result };
+        this.result = new Object({ message: [] });
+        return result;
     }
 
     _sendAttachment({ type, payload }) {
