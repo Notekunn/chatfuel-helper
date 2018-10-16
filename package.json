@@ -1,0 +1,19 @@
+{
+  "name": "chatfuel-helper",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VNBot-Developers/chatfuel-helper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VNBot-Developers/chatfuel-helper/issues"
+  },
+  "homepage": "https://github.com/VNBot-Developers/chatfuel-helper#readme"
+}
