@@ -1,3 +1,4 @@
+const json_encode = require('json_encode');
 class Chatfuel {
     constructor() {
         this.result = new Object({ message: [] });
@@ -12,7 +13,7 @@ class Chatfuel {
         if (this.result.message) this.result.message = this.result.message.slice(0, 10);
         let result = { ...this.result };
         this.result = new Object({ message: [] });
-        return result;
+        return json_encode(result);
     }
 
     _sendAttachment({ type, payload }) {

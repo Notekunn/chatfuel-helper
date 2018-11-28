@@ -1,6 +1,6 @@
 {
   "name": "chatfuel-helper",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/VNBot-Developers/chatfuel-helper/issues"
   },
-  "homepage": "https://github.com/VNBot-Developers/chatfuel-helper#readme"
+  "homepage": "https://github.com/VNBot-Developers/chatfuel-helper#readme",
+  "dependencies": {
+    "json_encode": "^0.1.0"
+  }
 }
