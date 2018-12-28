@@ -1,23 +1,23 @@
 const json_encode = require('json_encode');
 class Chatfuel {
     constructor() {
-        this.result = new Object({ message: [] });
+        this.result = new Object({ messages: [] });
         // return this;
     }
 
     sendText(text) {
-        this.result.message.push({ text });
+        this.result.messages.push({ text });
         return this;
     }
     render() {
-        if (this.result.message) this.result.message = this.result.message.slice(0, 10);
+        if (this.result.messages) this.result.messages = this.result.messages.slice(0, 10);
         let result = { ...this.result };
-        this.result = new Object({ message: [] });
+        this.result = new Object({ messages: [] });
         return json_encode(result);
     }
 
     _sendAttachment({ type, payload }) {
-        this.result.message.push({ attachment: { type, payload } });
+        this.result.messages.push({ attachment: { type, payload } });
         return this;
     }
 
@@ -67,7 +67,7 @@ class Chatfuel {
         return { title, url, type: 'json_plugin_url' }
     }
     createQuickReply({ text, quick_replies }) {
-        this.result.message.push({ text, quick_replies });
+        this.result.messages.push({ text, quick_replies });
         return this;
     }
 
