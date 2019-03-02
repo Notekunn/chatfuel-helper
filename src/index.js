@@ -57,7 +57,7 @@ class Chatfuel {
         return { type: 'element_share' }
     }
     createElement({ title, image_url, subtitle, buttons }) {
-        return { title, image_url, subtitle, buttons }
+        return { title, image_url, subtitle, buttons, default_action: { messenger_extensions: true } }
     }
 
     createQuickReplyButton({ title, block_names }) {
@@ -73,13 +73,23 @@ class Chatfuel {
 
     sendGalleries({ elements }) {
         return this._sendAttachment({
-            type: 'template', payload: { template_type: 'generic', image_aspect_ratio: 'square', elements }
+            type: 'template',
+            payload: {
+                template_type: 'generic',
+                image_aspect_ratio: 'square',
+                elements
+            }
         })
     }
 
     sendLists({ elements }) {
         return this._sendAttachment({
-            type: 'template', payload: { template_type: 'list', top_element_style: 'compact', elements }
+            type: 'template',
+            payload: {
+                template_type: 'list',
+                top_element_style: 'compact',
+                elements
+            }
         })
     }
     sendButton({ text, buttons }) {
